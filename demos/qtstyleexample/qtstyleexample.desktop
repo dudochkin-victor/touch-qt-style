@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=QtStyle Example
+Icon=icon-l-video
+Exec=/usr/bin/qtstyleexample
+OnlyShowIn=X-MeeGo;

@@ -1,0 +1,51 @@
+Source: meegotouch-qt-style
+Section: libs
+Priority: extra
+Maintainer: Tomas Junnonen <tomas.junnonen@nokia.com>
+Build-Depends: debhelper (>= 5), libqt4-dev (>= 4.7.0~git20100716-0maemo1+0m6), pkg-config (>= 0.22), libmeegotouch-dev, libcontentmanager-dev, libqtwebkit-dev, libxdamage-dev, libqtsparql-dev
+Standards-Version: 3.7.2
+
+Package: meegotouch-qt-style
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: MeeGo Touch Qt style for plain Qt applications
+ MeeGo Touch Qt style plugin
+
+Package: meegotouch-qt-style-dbg
+Architecture: any
+Section: devel
+Depends: meegotouch-qt-style (= ${Source-Version})
+Description: meegotouch-qt-style debug package
+ meegotouch-qt-style debug symbols.
+
+Package: meegotouch-qt-style-tests
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: MeeGo Touch Qt style tests
+ MeeGo Touch Qt style plugin tests
+
+Package: meegotouch-qt-style-tests-dbg
+Architecture: any
+Section: devel
+Depends: meegotouch-qt-style-tests (= ${Source-Version})
+Description: meegotouch-qt-style-tests debug package
+ meegotouch-qt-style-tests debug symbols.
+
+Package: meegotouch-demos-plainqt
+Section: devel
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Demo applications showing the capabilities of the plain qt style.
+
+Package: meegotouch-demos-plainqt-dbg
+Section: devel
+Architecture: any
+Depends: meegotouch-demos-plainqt (= ${Source-Version})
+Description: debug symbols of the plain qt examples
+
+Package: meegotouch-qt-style-dev
+Section: devel
+Architecture: any
+Depends: libmeegotouch-dev
+Description: MeeGo Touch Qt style development files
+ MeeGo Touch Qt style plugin development files

@@ -1,0 +1,92 @@
+/*! \page meegotouch-qt-style Meegotouch-qt-style
+
+\section intro_sec Introduction
+
+meegotouch-qt-style is a Qt style plugin based on QStyle API which provides meegotouch look and feel for plain Qt applications.
+
+For basic information about Qt styles and how they work, please look into the Qt QStyle documentation.
+
+A few points what meegotouch-qt-style does:
+<ol>
+<li> Styling for most Qt Widgets based on MTheme of libmeegotouch</li>
+<li> Kinetic scrolling for any QAbstractScrollArea</li>
+<li> Meegotouch window decorations</li>
+<li> Virtual Keyboard support</li>
+<li> Limited orientation change support</li>
+<li> Meegotouch dialogs for file handling</li>
+</ol>
+
+
+\section install Installing the style
+
+The style plugin is integrated in all images. If you need to manually install the style, simply install the package meegotouch-qt-style from the repositories.
+
+\section general How it works
+
+The style is based on the QStyle interface of Qt. Instead of drawing widgets with rectangles, gradients and so on, meegotouch-qt-style fetches styling information like colors, fonts, 
+font sizes, pixmaps etc. from MTheme and uses them instead of the widgets palette or other properties. Thats also why most widget properties like font or icon are ignored, when drawn 
+with meegotouch-qt-style.
+Also size hints for widgets calculated by the style are based on the values MTheme delivers for specific widgets.
+
+\section additionsl Additional Features
+
+\subsection kinetic Kinetic Scrolling
+
+Meegotouch-qt-style also adds support for kinetic scrolling to any kind of QAbstractScrollArea. For adding the kinetic scrolling support, we added libQtScroller from Qt Labs, found here:
+http://qt.gitorious.org/qt-labs/kineticscroller
+
+\subsection decoration Window decorations
+
+To make plain Qt apps look and feel like meegotouch apps, the style adds the meegotouch window decorations to your application. This is done by adding three MWindows as child to QMainWindow 
+of the application. Two of them are positioned where the statusbar and navigationbar is seen. Both of them show exactly these parts of the MApplicationPage where you can see these elements.
+A third window is used to display fullscreen meegotouch components like the meego filepicker. Between the first to partial windows and the second fullscreen one, visibility is switched as 
+needed.
+
+\subsection filehandling File handling
+
+With meegotouch-qt-style QFileDialog class can be used as usual, but for displaying the dialog QFileDialog is replaced by the meego file picker, which is shown instead.
+
+\subsection orientation Orientation change
+
+As orientation change is not possible with the classical QWidget and QLayout application design, there is only limited support as opt-in for orientation change with plain Qt application when using 
+meegotouch-qt-style. In general, the style only rotates the window decorations to the new orientation and sends a signal to the application, when orientation has changed.
+For rotating the applications contents the application develo
+You can connect to the orientation changed signal like this:
+connect(qApp->style(), SIGNAL(orientationChanged(int)), this, SLOT(mySlot()));
+
+You can also ask the style anytime what's the current orientation:
+QMetaObject::invokeMethod(qApp->style(), "orientation", Q_ARG(int*, &retVal));
+
+This is done through Qt's meta object system to avoid the application depending on the custom style. In this case these calls doesn't cause any errors, if you are using a differnt style which 
+doesn't support this.
+
+\subsection nostyle Disable styling
+
+The style plugin is not loaded for applications linking against libmeegotouchcore to save startup time and memory consumption. If you are starting up an application which not links against 
+libmeegotouchcore on meego platform , meegotouch-qt-style will be used by default. If you want to use another style you can start your application by passing "-style stylename" as parameter.
+This will cause Qt to not load meegotouch-qt-style at all. 
+You can also disable styling for specific widgets later by calling widget->setProperty("NoMStyle", QVariant(true)).
+
+\section doesdonts Does and Don'ts
+
+If you are using meegotouch-qt-style there some things you should keep in mind:
+
+<ol>
+    <li> if you want to use window decoration with menu support you have to use a QMainWindow as your top level widget. If you use any other QWidget as your top level widget you won't receive the window decoration from meegotouch-qt-style but only the navigation bar added by mdecorator.</li>
+    <li> widgets within the application should not be styled manually. These stylings may either prevent the style to imitate the look and feel of Meegotouch or they will be overwritten by the style. Both points may cause the application to be not useable on the device. Styling manually e.g. means, using seperate CSS for styling, overwriting the paint event, setting a different palette, or even setting fixed sizes or positions.</li>
+    <li> you must use layouts for your application. Manual layouting of your widgets by setting widgets position and size can't be adapted by the style.</li>
+    <li> don't use QObject::disconnect() to disconnect all signals from a widget and don't disconnect any signals from any widget, which were not connected by yourself.</li>
+    <li> don't remove any eventFilter classes from any widgets you didn't install by yourself.</li>
+    <li> manual setting of widget flags, especially flags that affect painting or window management may cause screwd up results.</li>
+    <li> Meegotouch has no system tray, so system tray icons can't be supported. Applications that use a system tray icon may cause problems, especially if the application doesn't close on the closeEvent but only minimize to system tray. </li>
+</ol>
+
+There are also some points that don't prevent the style from working, but should be considered when the style is used:
+
+<ol>
+    <li> large windows or dialogs with lots of content will not be useable on the device's small display.</li>
+    <li> If your application builds on a custom style, the style can't be used when running with the Qt Maemo Style.</li>
+    <li> Qt untypical behavior of your application may cause problems, e.g. setting modal flag on a QWidget and then showing it with QWidget::show().</li>
+    <li> custom widgets can't be fully adepted by the style and will be treated as blanc QWidgets. Their background may be removed and due to the widget will not be scaled, it may be unusable on the device's display.</li>
+    <li> using non-scalable images for decoration or as backgrounds aren't scaled to the device's DPI values. </li>
+</ol>

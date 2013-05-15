@@ -1,0 +1,166 @@
+meegotouch-qt-style (0.20.59-1) unstable; urgency=low
+
+  * switch from QtTracker to QtSparql
+  * added documentation
+  * Fixes: NB#203623 - Pure Qt applications running with meego graphicssystem always have a GL context
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Wen, 16 Jan 2011 16:00:00 +0200
+
+meegotouch-qt-style (0.20.58-1) unstable; urgency=low
+
+  * Fixes: NB#219162 - QFileDialog::getOpenFileName causes crashing
+  * buildtime improvements
+  * Fixes: NB#213143 - Content poorly fits in button area (QtStyle Example)
+  * Fixes: NB#218759 - Fullscreen QT app gets useless window frame decorations
+  * Fixes: NB#212508 - unexpected state after press on free area on QInputDialog
+
+ -- Holger Schroeder <holger.schroeder.ext@basyskom.de>  Thu, 27 Jan 2011 12:00:00 +0200
+
+meegotouch-qt-style (0.20.57-1) unstable; urgency=low
+
+  * Fixes: NB#208940 - meegotouch-qt-style depends on WebKit
+  * Fixes: NB#207754 - Selecting item in upper left area of combobox in QtStyle Example will cause screen to flicker
+  * Fixes: NB#207750 - Black rectangle displayed after selecting action in QtStyle Dialogs
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Tue, 16 Dec 2010 15:00:00 +0200
+
+meegotouch-qt-style (0.20.56-1) unstable; urgency=low
+
+  * Fixes: NB#209980 - Many comboboxes can be swiped to recents (QtStyle Example)
+  * Fixes: NB#208812 - Supersized scrollbars in QtStyle Example app
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Tue, 07 Dec 2010 12:00:00 +0200
+
+meegotouch-qt-style (0.20.55-1) unstable; urgency=low
+
+  * Fixes: NB#207736 - Cannot navigate back from "open files" dialog (QtStyle Example)
+  * Fixes: NB#207738 - QtStyle Example crashes on exit when "open files" dialog is in foreground
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Fri, 03 Dec 2010 15:00:00 +0200
+
+meegotouch-qt-style (0.20.54-1) unstable; urgency=low
+
+  * Fixes: NB#197218 - QInputDialog scroll out of usable area if hw keyboard is open & text field selected 
+  * Fixes: NB#195153 - plainqt allowed rotation is only 'left' and 'top'
+  * Fixes: NB#171599 - plainQt - sw keyboard hides QTextedit of QInputDialog
+  * Fixes: NB#169977 - plainQt opened dialog in minimized window is shown as seperate minimized app in mhome
+  * Fixes: NB#199720 - plainQt - QtStyle Orientation Change Demo doesn't open from Launcher
+  * Fixes: NB#195957 - plainQt - cannot change screen orientation in QtStyle Orientation Change Demo
+  * Fixes: NB#185886 - Vertical scrolling in portrait mode requires horizontal swipe
+  * Fixes: NB#205950 - plainQt - Comobox dialog crahses QtStyle Example
+  * Fixes: NB#171591 - plainQt - hw keyboard doesn't work in QInputMethod
+  * Fixes: NB#203536 - styled QComboBox selection list can't be closed with closed icon
+  * Fixes: NB#205182 - home & close button in Navigationbar doesn't work in development theme
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Thu, 25 Nov 2010 15:00:00 +0200
+
+meegotouch-qt-style (0.20.53-1) unstable; urgency=low
+
+  * Fixed a build error
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Thu, 18 Nov 2010 16:30:00 +0200
+
+meegotouch-qt-style (0.20.52-1) unstable; urgency=low
+
+  * remoced old kinetic scrolling code
+  * removed old window decoration code
+  * improved some visual glitches
+  * no kinetic scrolling on QLineEdits
+  * Dialogs without reparenting
+  * Fixes: NB#204309 - QFileDialog returns tracker ids, not filepaths.
+  * Fixes: NB#202506 - File cannot be uploaded successfully with normal http post.
+  * Fixes: NB#203867 - plainQt - screen flickers when text entry is selected
+  * Fixes: NB#203872 - plainQt - slider progress label updated too slowly
+  * Fixes: NB#203879 - plainQt - view gets divided in half when quickly switching between two tabs
+  * Fixes: NB#203864 - plainQt - second attempt of opening app menu will blank window content
+  * Fixes: NB#204562 - QProgressbar - custom theming is not as expected with custom pixmaps
+  * Fixes: Don't show ampersands at all where they are used as a shortcut classifier
+  * Fixes: NB#198617 - Pixmap updates on MStatusBar
+  * Fixes: NB#187924 - Status area doesn't update while Field Test Display in use
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Wed, 17 Nov 2010 16:30:00 +0200
+
+meegotouch-qt-style (0.20.51-1) unstable; urgency=low
+
+  * Adepting recent UI changes
+  * Fixes: Draw checkboxes correctly when drawPrimitive() is called with
+  * Fixes: Don't show ampersands in submenu lists
+  * Fixes: Don't render dots in QToolButtons which don't have set a string.
+  * Fixes: Don't show ampersands in submenu lists
+  * Changes: Added support for QToolBox
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Tue, 9 Nov 2010 16:00:00 +0200
+
+meegotouch-qt-style (0.20.50-1) unstable; urgency=low
+
+  * Changes: QWidget - Added QtScroller
+
+ -- Holger Schröder <holger.schroeder.ext@basyskom.de>  Mon, 8 Nov 2010 10:12:00 +0200
+
+meegotouch-qt-style (0.20.49-1) unstable; urgency=low
+
+  * Fixes: NB#202477 -  QWidget - Background is not initialized as expected
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Thu, 04 Nov 2010 16:10:00 +0200
+
+meegotouch-qt-style (0.20.48-1) unstable; urgency=low
+
+  * removed QtMaemo6TestStyle
+  * fixed Krazy warnings
+  * Fixes NB#199945 -  COREWEB: /usr/bin/mdecorator 'MScalableImage::pixmap QtMaemo6Style::pixelMetric QScrollBar::sizeHint
+    QAbstractScrollAreaPrivate::layoutChildren QAbstractScrollAreaPrivate::init':   :q
+  * Added feedback for tabbars
+  * Menu is transparent again when running in software mode
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Thu, 28 Oct 2010 16:00:00 +0200
+
+meegotouch-qt-style (0.20.47-1) unstable; urgency=low
+
+  * disabled old style reparenting window decoration
+  * only QMainWindow now gets decorated by the style, otherwise mdecorator will decorate the windows
+  * Fixes NB#172628 - meegotouch-qt-style doesn't respecting the Qt::WA_TranslucentBackground attribute
+  * Fixes NB#172878 -  plainqt - QFileDialog unexpected dialog is also shown
+  * Fixes NB#177637 -  Plain Qt app main widget/window size not correct
+  * Fixes NB#180672 -  Cannot open the status menu in a Qt app
+  * Fixes NB#187024 -  Regressions: Select file dialog is displayed as blank view in widget.
+  * Fixes NB#188122 -  QMainWindow::closeEvent() ignored
+  * Fixes NB#188511 -  PlainQt - central widget only takes up half the window
+  * Fixes NB#192803 -  Meegotouch styled plain Qt applications poll constantly even in background
+  * Fixes NB#197881 -  Maximizing a QMainWindow results in the central widget getting incorrect size
+  * Fixes NB#199069 -  Unable to receive X11 events in QWidget::x11Event(XEvent *event) handler with plainQt plugin
+  * Fixes NB#198976 -  meegotouch-qt-style is consuming QComboBox signals
+  * Added support for code coverage test
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Fri, 22 Oct 2010 14:00:00 +0200
+
+meegotouch-qt-style (0.20.46-1) unstable; urgency=low
+
+  * move the reparenting and filepicker work to master.
+
+ -- Holger Schröder <holger.schroeder.ext@basyskom.de>  Thu, 21 Oct 2010 16:12:00 +0200
+
+meegotouch-qt-style (0.20.45-1) unstable; urgency=low
+
+  * Fixes NB#195963 - slider label text in QtExample app is barely visible
+  * Fixes NB#172863 -  plainqt - missing parts in dialog examples
+  * Fixes NB#195951 -  plainQt - Cannot open all available modal dialogs in
+  * Fixes NB#196174 -  QtMaemo6Style::isStyled() does nearly 100 000 allocs
+  * Fixes NB#192015 -  plainqt - tab window buttons don't react as expected
+  * Fixes NB#196495 -  Misrendered QRadioButtons with PlainQt style
+  * Partly fixes: NB#197214 -  QInputDialog is broken - wrong text color, size
+  * Fixes #NB174788 -  style attribute on startup doesn't work with qtstyleexample-windows-style.desktop
+
+ -- Bernd Lamecker <bernd.lamecker@basyskom.de>  Wed, 20 Oct 2010 12:12:00 +0200
+
+meegotouch-qt-style (0.20.44-1) unstable; urgency=low
+
+  * Fixed QStyleDialogs
+  * Adapted ComboBox design to MComboBox
+  * Proper styling of QLabel
+  * Implemented a QPixmapCache mechanism for combobox indicators; did some
+    minor code changes; removed a deprecated method call.
+  * Fixes: NB#181963 - PlainQt checkbox background images are displayed with a
+    wrong size
+  * initial version after split from libmeegotouch repo
+
+ -- Holger Schröder <holger.schroeder.ext@basyskom.de>  Tue, 21 Sep 2010 17:12:00 +0200

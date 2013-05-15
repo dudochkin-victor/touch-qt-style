@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=QtStyle Dialogs Example
+Icon=icon-l-video
+Exec=/usr/bin/qtstyledialogs
+OnlyShowIn=X-MeeGo;

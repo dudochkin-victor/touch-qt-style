@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=QtStyle Orientation
+Icon=icon-l-video
+Exec=qtstyleorientation
+OnlyShowIn=X-MeeGo;
